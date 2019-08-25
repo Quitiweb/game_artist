@@ -1,0 +1,31 @@
+{% extends 'landing/base-sin-head.html' %}
+
+{% load static %}
+
+<!-- Header -->
+{% block header %}
+    {% include "landing/inc/header.html" %}
+{% endblock %}
+
+<!-- Menu -->
+{% block menu %}
+    {% include "landing/inc/menu.html" %}
+{% endblock %}
+
+{% block contacto %}
+
+    <section id="footer">
+        <div id="contact" class="inner">
+            <h2 class="major">Login</h2>
+			<p style="margin-top: -1.5em;">¿No tienes cuenta?<br/>Regístrate aquí: <a href="/signup"><b>SignUp</b></a></p>
+            <div class="contact-form">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

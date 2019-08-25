@@ -1,0 +1,30 @@
+{% extends 'landing/base-sin-head.html' %}
+
+{% load static %}
+
+<!-- Header -->
+{% block header %}
+    {% include "landing/inc/header.html" %}
+{% endblock %}
+
+<!-- Menu -->
+{% block menu %}
+    {% include "landing/inc/menu.html" %}
+{% endblock %}
+
+{% block contacto %}
+
+    <section id="footer">
+        <div id="contact" class="inner">
+            <h2 class="major">Sign Up</h2>
+            <div class="contact-form">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
