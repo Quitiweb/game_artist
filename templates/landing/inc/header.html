@@ -1,23 +1,21 @@
 {% load static %}
 
 <header id="header" class="alt">
-    <a href="/" class="image original"><img src="{% static 'main/images/Logo_Kradleco.png' %}" alt="kradleco.es" /></a>
-    <a href="/" class="image white"><img src="{% static 'main/images/Logo_Kradleco_Blanco.png' %}" alt="kradleco.es" /></a>
+    <a href="/" class="image original"><img src="{% static 'main/images/ga_logo.png' %}" alt="gameartist.es" /></a>
+    <a href="/" class="image white"><img src="{% static 'main/images/ga_logo_empty.png' %}" alt="gameartist.es" /></a>
+
+    <div class="artista">
+        <h6><b>Momoyra10</b><br><b>Paloma Ribeiro .</b> Artista Digital</h6>
+    </div>
+
     <nav class="links">
-        <a href="/">Inicio</a>
-        <a href="/blog">Blog</a>
-        <a href="/#descubre">Descubre Kradleco</a>
-        <a href="/#contact">Contacto</a>
-
-        <!--
-        {% if user.is_authenticated %}
-            <a href="/perfil">Mi Perfil</a>
-        {% else %}
-            <a href="login">Inicia Sesión</a>
-        {% endif %}
-        -->
-
+        <a href="/">Home</a>
+        <a href="/#portfolio">Portfolio</a>
+        <a href="{% url 'blog:index' %}">Blog</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
     </nav>
+
     <nav class="menu">
         <a href="#menu">Menu</a>
     </nav>

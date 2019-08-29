@@ -2,31 +2,27 @@
 
 {% load static %}
 
-{% block banner %}
+{% block title %}Momoyra10 - Artista Digital{% endblock %}
+
+{% block content %}
+
 	<!-- Banner -->
 	{% include "landing/inc/banner.html" %}
-{% endblock %}
 
-{% block wrapper %}
-	<section id="wrapper">
-		<!-- Marca, espacio o servicio -->
-		{% include "landing/inc/marca.html" %}
+	<!-- Marca, espacio o servicio -->
+	{% include "landing/inc/portfolio.html" %}
 
-		<!-- Ventajas -->
-		{% include "landing/inc/ventajas.html" %}
+	<!-- Ventajas -->
+	{% include "landing/inc/ventajas.html" %}
 
-		<!-- Pruebalo Gratis -->
-		{% include "landing/inc/pruebalo.html" %}
+	<!-- Pruebalo Gratis -->
+	{% include "landing/inc/pruebalo.html" %}
 
-		<!-- Descubre -->
-		{% include "landing/inc/descubre.html" %}
+	<!-- Descubre -->
+	{% include "landing/inc/descubre.html" %}
 
-		<!-- Blog -->
-		{% include "landing/inc/blog.html" %}
-	</section>
-{% endblock %}
-
-{% block contacto %}
+	<!-- Blog -->
+	{% include "landing/inc/blog.html" %}
 
 	<!-- Contacto -->
 	{% include "landing/inc/footer.html" %}

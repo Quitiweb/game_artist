@@ -5,10 +5,10 @@
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
-		background-color: rgba(250, 245, 255, 0.95);
-		height: 3.5em;
+		background-color: rgba(229, 229, 229, 0.95);
+		height: 4.5em;
 		left: 0;
-		line-height: 3.5em;
+		line-height: 4.5em;
 		padding: 0 1.25em;
 		position: fixed;
 		top: 0;
@@ -16,14 +16,27 @@
 		z-index: 10000;
 	}
 
+        #header .artista {
+            width: 50%;
+            position: absolute;
+            top: 1em;
+            left: 5em;
+        }
+
+            #header .artista h6 {
+                text-transform: none;
+            }
+
+            #header .artista h6 b {
+                text-transform: uppercase;
+            }
+
         #header a img {
             -webkit-align-items: center;
             align-items: center;
             height: 3em;
             position: absolute;
             top: 0.6em;
-            height: 35px;
-            width: 73px;
             border-radius: 0;
         }
 
@@ -58,7 +71,7 @@
 			position: absolute;
 			right: 0.7em;
 			text-transform: uppercase;
-			top: 0.7em;
+			top: 1.3em;
 		}
 
 			#header .menu {

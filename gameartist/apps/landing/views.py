@@ -1,8 +1,10 @@
 from django.core.mail import send_mail, BadHeaderError
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
+from django.shortcuts import redirect, render
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.utils import timezone
+from django.contrib import messages
+from django.urls import reverse_lazy
 
 from .forms import ContactForm, FormularioForm
 

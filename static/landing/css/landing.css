@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
 @import url(../../main/assets/css/header.css);
 @import url(inc/row.css);
-@import url(inc/marca.css);
+@import url(inc/portfolio.css);
 @import url(inc/ventajas.css);
 @import url(inc/pruebalo.css);
 @import url(inc/descubre.css);
@@ -1580,14 +1580,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		padding: 10em 3em;
-		background: linear-gradient(270deg, #982BF8 0%, #5F13EF 100%);
-		margin-bottom: -9.91em;
-		color: #FFFFFF;
-	}
-
-    #banner strong, #banner b, #banner h2 {
-		color: #FFFFFF;
+		padding: 0;
 	}
 
 		#banner .inner {
@@ -1712,7 +1705,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#banner {
-				padding: 5em 2em 4em 2em ;
+				padding: 5em 0 4em;
 				/* margin-bottom: -3.399em; */
 				margin-bottom: -2em;
 			}
@@ -1825,7 +1818,7 @@ input, select, textarea {
 	@media screen and (max-width: 736px) {
 
 		#wrapper > header {
-			padding: 6.5em 2em 3em 2em ;
+			padding: 6.5em 2em 3em 2em;
 			background-size: auto, 125%;
 			margin-bottom: -2.5em;
 		}
@@ -1862,10 +1855,6 @@ input, select, textarea {
 		.wrapper.spotlight {
 			background-color: #FFFFFF;
 		}
-
-			.wrapper.spotlight:before {
-				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='50,100 100,25 100,100' style='fill:%23FFFFFF%3B' /%3E%3Cpolygon points='0,100 0,25 50,100' style='fill:%23FFFFFF%3B' /%3E%3C/svg%3E");
-			}
 
             .wrapper.spotlight:before {
                 background-repeat: no-repeat;
