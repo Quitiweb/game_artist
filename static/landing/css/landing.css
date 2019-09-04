@@ -184,13 +184,13 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
-		color: #4D4D4D;
+		color: #000000;
 		text-decoration: none;
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #5F13EF;
+
 		}
 
 		a.special:not(.button) {
@@ -1583,6 +1583,15 @@ input, select, textarea {
 		padding: 0;
 	}
 
+        .carousel-item>img {
+            user-drag: none;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
 		#banner .inner {
 			margin: 0 auto;
 			width: var(--inner-width);
@@ -1679,7 +1688,7 @@ input, select, textarea {
 
 			#banner {
 				padding: 7em 0 8.25em 0 ;
-				background: linear-gradient(270deg, #982BF8 0%, #5F13EF 100%);
+				background: linear-gradient(270deg, #982BF8 0%,  100%);
 				/* background-color: #2e3141; */
 				/* background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg"); */
 				background-size: auto, cover;
