@@ -1580,7 +1580,8 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		padding: 0;
+
+		padding: 4.2em 0 0 0 ;
 	}
 
         .carousel-item>img {
