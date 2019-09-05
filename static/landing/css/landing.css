@@ -82,6 +82,11 @@ input, select, textarea {
 	appearance: none;
 }
 
+#banda {
+    background: url('../images/momoyra10_concept landscape lake hylia_Paloma Ribeiro.jpg') no-repeat;
+    background-size: cover;
+}
+
 /* Basic */
 
 	@-ms-viewport {
@@ -132,6 +137,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #4D4D4D;
+
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: 300;
@@ -171,6 +177,10 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 480px) {
+
+            #carouselExampleControls {
+                display: none;
+            }
 
 			body, input, select, textarea {
 				font-size: 12pt;
@@ -489,6 +499,7 @@ input, select, textarea {
 	input[type="tel"],
 	select,
 	textarea {
+	    resize: none;
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
@@ -557,6 +568,7 @@ input, select, textarea {
 	}
 
 	textarea {
+	    resize: none;
 		padding: 0.75em 1em;
 	}
 
@@ -1154,7 +1166,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
-		background-color: #DC9B74;
+		background-color: #e83c3c;;
 		border-radius: 26px;
 		opacity: 0.89;
 		border: 0;
@@ -1180,7 +1192,7 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: rgba(95, 19, 239, 0.5);
+			background-color: #ee7676;
 		}
 
 		input[type="submit"]:active,
@@ -1687,56 +1699,19 @@ input, select, textarea {
 
 		@media screen and (max-width: 1280px) {
 
-			#banner {
+			/*#banner {
 				padding: 7em 0 8.25em 0 ;
 				background: linear-gradient(270deg, #982BF8 0%,  100%);
-				/* background-color: #2e3141; */
-				/* background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg"); */
+				 background-color: #2e3141;
+				 background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
 				background-size: auto, cover;
 				background-position: center, center;
 				margin-bottom: -6.9em;
-			}
+			}*/
 
 		}
 
-		@media screen and (max-width: 980px) {
 
-			#banner {
-				padding: 12em 3em 7em 3em ;
-				margin-bottom: -4.75em;
-			}
-
-				#banner .inner {
-					width: 100%;
-				}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#banner {
-				padding: 5em 0 4em;
-				/* margin-bottom: -3.399em; */
-				margin-bottom: -2em;
-			}
-
-				#banner .logo {
-					margin: 0 0 1em 0;
-				}
-
-					#banner .logo .icon {
-						font-size: 1.5em;
-					}
-
-				#banner h2 {
-					font-size: 1.5em;
-				}
-
-				#banner p {
-					font-size: 0.8em;
-				}
-
-		}
 
 		body.is-preload #banner .logo {
 			-moz-transform: translateY(0.5em);

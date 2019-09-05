@@ -17,10 +17,10 @@
 	}
 
         #header .artista {
-            width: 50%;
+            width: 80%;
             position: absolute;
             top: 1em;
-            left: 5em;
+            /*left: 5em;*/
         }
 
             #header .artista h6 {
@@ -147,7 +147,7 @@
 			}
 
 		    #header.alt nav a:hover {
-		        color: #00000;
+		        color: #e83c3c;
 		    }
 
 		@media screen and (max-width: 980px) {
@@ -170,8 +170,7 @@
 		@media screen and (max-width: 736px) {
 
 			#header {
-				height: 2.75em;
-				line-height: 2.75em;
+
 			}
 
 				#header nav {
@@ -182,8 +181,6 @@
 				}
 
 					#header nav a {
-						height: inherit;
-						line-height: inherit;
 					}
 
 						#header nav a[href="#menu"] {
@@ -200,7 +197,7 @@
 
 		@media screen and (max-width: 480px) {
 
-			#header nav a[href="#menu"] {
+/*			#header nav a[href="#menu"] {
 				width: 4em;
 				white-space: nowrap;
 				text-indent: 4em;
@@ -216,6 +213,6 @@
 					text-align: right;
 					margin-left: 0;
 					padding-right: 1.25em;
-				}
+				}*/
 
 		}

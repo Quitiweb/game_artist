@@ -1,21 +1,19 @@
 {% load static %}
 
-<section id="blog" class="wrapper alt style1">
+<section id="blog" class="wrapper alt style1" style="margin-top:10px;">
     <div class="inner">
-        <h2 class="major"><b>Disfruta</b> de nuestro blog</h2>
+        <h2 class="major">Disfruta de mi blog</h2>
         <div class="row">
-            <div class="col-8 col-12-small">
+            <div class="col-12">
                 <p>Bienvenido a nuestro <b>blog de formación e información sectorial</b>,
                 cuando relancemos la plataforma podrás subir tus propias entradas
                 y leer las de otros usuarios e influencers del sector.</p>
             </div>
-            <div class="col-4 col-12-small">
-                <ul class="actions">
-                    <li><a href="/blog" class="button">Llévame</a></li>
-                </ul>
+            <div class="col-12 mt-5">
+                <a href="/blog" class="button">Llévame</a>
             </div>
         </div>
-        <section class="features">
+        <section class="features mt-5">
             {% for p in post_list %}
                 <article>
                     <a href="/blog/{{ p.get_url }}" class="image">
