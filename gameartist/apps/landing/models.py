@@ -5,6 +5,12 @@ EMAIL_MAX_LENGTH = 80
 NOMBRE_MAX_LENGTH = 100
 
 
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=30)
+
+    def __str__(self):
+        return str(self.nombre)
+
 class Target(models.Model):
     MUJER = 'MUJER'
     HOMBRE = 'HOMBRE'

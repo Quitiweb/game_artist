@@ -6,9 +6,11 @@ from django.utils import timezone
 from django.contrib import messages
 from django.urls import reverse_lazy
 
+from gameartist.apps.blog.models import Post
+from gameartist.apps.landing.models import Categoria
 from .forms import ContactForm, FormularioForm
 
-from ..blog import models
+
 
 # def index(request):
 #     return render(request, 'landing/index.html')
@@ -49,6 +51,8 @@ def formulario(request):
 def index(request):
     template = loader.get_template('landing/index.html')
 
+    categorias = Categoria.objects.filter().all()
+
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -65,13 +69,14 @@ def index(request):
         else:
             print('Error en el formulario')
 
-    post_list = models.Post.objects.filter(
+    post_list = Post.objects.filter(
         fecha_de_publicacion__lte=timezone.now()
-    ).order_by('-fecha_de_publicacion')[:6]
+    ).order_by('-fecha_de_publicacion')[:2]
 
     context = {
         'form': form,
         'post_list': post_list,
+        'categorias': categorias
     }
 
     return HttpResponse(template.render(context, request))
@@ -91,3 +96,7 @@ def enviar_email(subject, message):
         # send_mail(subject, message, 'contact@kradleco.es', ['rafa@quitiweb.com'])
     except BadHeaderError:
         return HttpResponse('Invalid header found')
+
+
+def categoria(request, cat):
+    return render(request, 'landing/mensaje-enviado.html')
