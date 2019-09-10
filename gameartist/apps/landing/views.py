@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 
 from gameartist.apps.blog.models import Post
-from gameartist.apps.landing.models import Categoria
+from gameartist.apps.landing.models import Categoria, Imagen
 from .forms import ContactForm, FormularioForm
 
 
@@ -53,6 +53,8 @@ def index(request):
 
     categorias = Categoria.objects.filter().all()
 
+    imagen = Imagen.objects.get(nombre="aa")
+
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -76,7 +78,8 @@ def index(request):
     context = {
         'form': form,
         'post_list': post_list,
-        'categorias': categorias
+        'categorias': categorias,
+        'imagen': imagen
     }
 
     return HttpResponse(template.render(context, request))
@@ -99,4 +102,15 @@ def enviar_email(subject, message):
 
 
 def categoria(request, cat):
-    return render(request, 'landing/mensaje-enviado.html')
+    template = loader.get_template('landing/categoria.html')
+
+    categoria = Categoria.objects.filter(nombre=cat).first()
+
+    imagenes = Imagen.objects.filter(categoria=categoria)
+
+    context = {
+        'categoria': categoria,
+        'imagenes': imagenes
+    }
+
+    return HttpResponse(template.render(context, request))

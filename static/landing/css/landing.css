@@ -720,50 +720,56 @@ input, select, textarea {
 		position: relative;
 	}
 
-		.image img {
-			border-radius: 5px;
-			display: block;
-		}
+    .image img {
+        border-radius: 5px;
+        display: block;
+    }
 
-		.image.left, .image.right {
-			max-width: 40%;
-		}
+    .image.left, .image.right {
+        max-width: 40%;
+    }
 
-			.image.left img, .image.right img {
-				width: 100%;
-			}
+        .image.left img, .image.right img {
+            width: 100%;
+        }
 
-		.image.left {
-			float: left;
-			padding: 0 1.5em 1em 0;
-			top: 0.25em;
-		}
+    .image.left {
+        float: left;
+        padding: 0 1.5em 1em 0;
+        top: 0.25em;
+    }
 
-		.image.right {
-			float: right;
-			padding: 0 0 1em 1.5em;
-			top: 0.25em;
-		}
+    .image.right {
+        float: right;
+        padding: 0 0 1em 1.5em;
+        top: 0.25em;
+    }
 
-		.image.fit {
-			display: block;
-			margin: 0 0 2em 0;
-			width: 100%;
-		}
+    .image.fit {
+        display: block;
+        margin: 0 0 2em 0;
+        width: 100%;
+    }
 
-			.image.fit img {
-				width: 100%;
-			}
+        .image.fit img {
+            width: 100%;
+        }
 
-		.image.main {
-			display: block;
-			margin: 0 0 3em 0;
-			width: 100%;
-		}
+    .image.main {
+        display: block;
+        margin: 0 0 3em 0;
+        width: 100%;
+    }
 
-			.image.main img {
-				width: 100%;
-			}
+    .image.main img {
+        width: 100%;
+    }
+
+    .img-fluid {
+        width: 200px; /* You can set the dimensions to whatever you want */
+        height: 200px;
+        object-fit: cover;
+    }
 
 /* Box */
 

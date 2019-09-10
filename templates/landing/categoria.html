@@ -1,0 +1,15 @@
+{% extends "landing/base.html" %}
+
+{% load static %}
+
+{% block title %}Portfolio - Artista Digital{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="pt-5">{{ categoria.nombre }}</h1>
+
+    {% for i in imagenes %}
+    <img src="/media/{{i.src}}" alt="">
+    {% endfor %}
+</div>
+{% endblock %}
