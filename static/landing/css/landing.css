@@ -43,6 +43,10 @@ body {
 	line-height: 1;
 }
 
+.masonry-item {
+  margin-bottom: 30px;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -178,7 +182,7 @@ input, select, textarea {
 
 		@media screen and (max-width: 480px) {
 
-            #carouselExampleControls {
+            #banner {
                 display: none;
             }
 
@@ -200,7 +204,6 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-
 		}
 
 		a.special:not(.button) {
@@ -1509,9 +1512,9 @@ input, select, textarea {
 		}
 
 		#menu h2 {
-			border-bottom: solid 2px rgb(95, 19, 239, 0.35);
+			border-bottom: solid 2px rgb(255, 105, 97, 0.35);
 			padding-bottom: 1em;
-			color: #5F13EF;
+			color: #ff6961;
 		}
 
 		#menu .close {
@@ -1557,7 +1560,7 @@ input, select, textarea {
 				}
 
 					#menu .links li a:hover {
-						background: #5F13EF;
+						background: #ff6961;
 					}
 
 		@media screen and (max-width: 736px) {

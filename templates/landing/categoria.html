@@ -5,11 +5,24 @@
 {% block title %}Portfolio - Artista Digital{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="pt-5">{{ categoria.nombre }}</h1>
+<div class="mt-5">
+    <br><br><br>
+    <div class="row text-center">
+    <h1 class="pt-5 col-12">{{ categoria.nombre }}</h1>
+    </div>
 
+    <br><br>
+<div class="row col-12 justify-content-center" >
     {% for i in imagenes %}
-    <img src="/media/{{i.src}}" alt="">
+        <div class=" justify-content-center col-sm-12 col-md-12 col-12 col-lg-5">
+            <img class="w-100" src="/media/{{i.src}}" alt="">
+            <p>{{ i.nombre }}</p>
+        </div>
     {% endfor %}
+     </div>
 </div>
+
+<!-- Footer -->
+	{% include "landing/inc/footer.html" %}
+
 {% endblock %}

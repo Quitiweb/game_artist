@@ -143,4 +143,12 @@
 
 			});
 
+$(window).on("load", function() {
+	$('.masonry').masonry({
+    itemSelector: '.masonry-item',
+    columnWidth: 80
+  });
+});
+
 })(jQuery);
+

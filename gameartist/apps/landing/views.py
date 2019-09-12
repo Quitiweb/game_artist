@@ -95,7 +95,7 @@ def solicitud_recibida(request):
 
 def enviar_email(subject, message):
     try:
-        send_mail(subject, message, 'contact@kradleco.es', ['info@kradleco.es', 'rafa@quitiweb.com'])
+        send_mail(subject, message, 'jlramos97@gmail.com', ['jlramos97@gmail.com', 'joseluis@quitiweb.com'])
         # send_mail(subject, message, 'contact@kradleco.es', ['rafa@quitiweb.com'])
     except BadHeaderError:
         return HttpResponse('Invalid header found')
@@ -112,5 +112,12 @@ def categoria(request, cat):
         'categoria': categoria,
         'imagenes': imagenes
     }
+
+    return HttpResponse(template.render(context, request))
+
+
+def about(request):
+    template = loader.get_template('landing/about.html')
+    context = {}
 
     return HttpResponse(template.render(context, request))
