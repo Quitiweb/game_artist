@@ -1,19 +1,12 @@
 from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import redirect, render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.template import loader
 from django.utils import timezone
-from django.contrib import messages
-from django.urls import reverse_lazy
 
 from gameartist.apps.blog.models import Post
 from gameartist.apps.landing.models import Categoria, Imagen
 from .forms import ContactForm, FormularioForm
-
-
-
-# def index(request):
-#     return render(request, 'landing/index.html')
 
 
 def formulario(request):
@@ -53,8 +46,6 @@ def index(request):
 
     categorias = Categoria.objects.filter().all()
 
-    imagen = Imagen.objects.get(nombre="aa")
-
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -79,7 +70,6 @@ def index(request):
         'form': form,
         'post_list': post_list,
         'categorias': categorias,
-        'imagen': imagen
     }
 
     return HttpResponse(template.render(context, request))
