@@ -6,39 +6,7 @@ from django.utils import timezone
 
 from gameartist.apps.blog.models import Post
 from gameartist.apps.landing.models import Categoria, Imagen
-from .forms import ContactForm, FormularioForm
-
-
-def formulario(request):
-    template = loader.get_template('landing/formulario.html')
-
-    if request.method == 'GET':
-        form = FormularioForm()
-    else:
-        form = FormularioForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-            subject = 'Kradleco nueva solicitud recibida'
-            from_email = form.cleaned_data['email']
-            nombre = form.cleaned_data['nombre']
-            enlace = 'https://www.kradleco.es/admin/landing/solicitud/'
-            message = 'Solicitud recibida de: ' + nombre + '\nCon email: ' + from_email +\
-                      '\n\nPara ver dicha solicitud, visita: ' + enlace
-
-            enviar_email(subject, message)
-
-            form = FormularioForm()
-
-            return redirect('solicitud-recibida')
-        else:
-            print('Error en el formulario')
-
-    context = {
-        'form': form,
-    }
-
-    return HttpResponse(template.render(context, request))
+from .forms import ContactForm
 
 
 def index(request):
@@ -77,10 +45,6 @@ def index(request):
 
 def mensaje_enviado(request):
     return render(request, 'landing/mensaje-enviado.html')
-
-
-def solicitud_recibida(request):
-    return render(request, 'landing/solicitud-recibida.html')
 
 
 def enviar_email(subject, message):

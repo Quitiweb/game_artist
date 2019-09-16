@@ -10,6 +10,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ALLOWED_HOSTS += [
     '.gameartist.es',
+    '.qw-django.club',
 ]
 
 # To send emails using SMTP
