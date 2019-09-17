@@ -25,5 +25,8 @@ class Imagen(models.Model):
         null=True
     )
 
+    class Meta:
+        verbose_name_plural = "Imagenes"
+
     def __str__(self):
         return str(self.nombre)
