@@ -13,7 +13,7 @@ def index(request):
     template = loader.get_template('landing/index.html')
 
     categorias = Categoria.objects.all()
-    og_description = Header.objects.values_list('og_description', flat=True)
+    header = Header.objects.all().first()
     empresas = Empresa.objects.all()
 
     if request.method == 'GET':
@@ -40,7 +40,7 @@ def index(request):
         'form': form,
         'post_list': post_list,
         'categorias': categorias,
-        'og_description': og_description,
+        'header': header,
         'empresas': empresas,
     }
 
