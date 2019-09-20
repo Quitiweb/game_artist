@@ -13,7 +13,7 @@ def index(request):
     template = loader.get_template('landing/index.html')
 
     categorias = Categoria.objects.all()
-    og_description = Header.objects.only('og_description')
+    og_description = Header.objects.values_list('og_description', flat=True)
 
     if request.method == 'GET':
         form = ContactForm()
