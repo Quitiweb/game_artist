@@ -5,14 +5,15 @@ from django.template import loader
 from django.utils import timezone
 
 from gameartist.apps.blog.models import Post
-from gameartist.apps.landing.models import Categoria, Imagen
+from .models import Categoria, Imagen, About, Header
 from .forms import ContactForm
 
 
 def index(request):
     template = loader.get_template('landing/index.html')
 
-    categorias = Categoria.objects.filter().all()
+    categorias = Categoria.objects.all()
+    og_description = Header.objects.only('og_description')
 
     if request.method == 'GET':
         form = ContactForm()
@@ -38,6 +39,7 @@ def index(request):
         'form': form,
         'post_list': post_list,
         'categorias': categorias,
+        'og_description': og_description,
     }
 
     return HttpResponse(template.render(context, request))
@@ -72,6 +74,9 @@ def categoria(request, cat):
 
 def about(request):
     template = loader.get_template('landing/about.html')
-    context = {}
+
+    about = About.objects.filter(activo=True).first()
+
+    context = {'about': about}
 
     return HttpResponse(template.render(context, request))

@@ -157,3 +157,14 @@ STATICFILES_FINDERS = (
 # Login/logout redirects to homepage
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'relative_urls': False,
+    'plugins': 'media,spellchecker',
+    'content_style': '.mcecontentbody{font-size:13px;}',
+    'theme_advanced_buttons1': 'undo,redo,|,bold,italic,underline,bullist,numlist,fontselect, fontsizeselect,'
+                               'link,unlink,|,code',
+    'theme_advanced_resizing': True,
+    'theme_advanced_path': False,
+}
