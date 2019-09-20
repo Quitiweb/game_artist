@@ -5,15 +5,16 @@ from django.template import loader
 from django.utils import timezone
 
 from gameartist.apps.blog.models import Post
-from .models import Categoria, Imagen, About, Header
+from .models import Categoria, Imagen, About, Header, Empresa
 from .forms import ContactForm
 
 
 def index(request):
     template = loader.get_template('landing/index.html')
 
-    categorias = Categoria.objects.all()
+    categorias = Categoria.objects.filter(categoria__home=True)
     og_description = Header.objects.values_list('og_description', flat=True)
+    empresas = Empresa.objects.all()
 
     if request.method == 'GET':
         form = ContactForm()
@@ -40,6 +41,7 @@ def index(request):
         'post_list': post_list,
         'categorias': categorias,
         'og_description': og_description,
+        'empresas': empresas,
     }
 
     return HttpResponse(template.render(context, request))

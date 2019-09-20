@@ -4,12 +4,15 @@
 
 {% block title %}Momoyra10 - Artista Digital{% endblock %}
 
-{% block og_description %}{{ og_description }}{% endblock %}
+{% block og_description %}<meta property="og:description" content="{{ og_description }}">{% endblock %}
 
 {% block content %}
 
 	<!-- Banner -->
 	{% include "landing/inc/banner.html" %}
+
+	<!-- Empresas -->
+	{% include "landing/inc/empresas.html" %}
 
 	<!-- Portfolio -->
 	{% include "landing/inc/portfolio.html" %}

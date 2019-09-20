@@ -20,6 +20,10 @@ class Imagen(models.Model):
 
     src = models.ImageField(upload_to='img/art/', default='', blank=True)
 
+    home = models.BooleanField(
+        default=False, blank=True, help_text=_("Activala para que se muestre en la Home")
+    )
+
     categoria = models.ForeignKey(
         Categoria,
         on_delete=models.CASCADE,
@@ -68,3 +72,11 @@ class Header(models.Model):
 
     def __str__(self):
         return str(self.titulo)
+
+
+class Empresa(models.Model):
+    nombre = models.CharField(max_length=TITLE_MAX_LENGTH)
+    imagen = models.ImageField(upload_to='img/empresa/', default='', blank=True)
+
+    def __str__(self):
+        return str(self.nombre)
