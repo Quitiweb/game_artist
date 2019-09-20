@@ -12,7 +12,7 @@ from .forms import ContactForm
 def index(request):
     template = loader.get_template('landing/index.html')
 
-    categorias = Categoria.objects.filter(categoria__home=True)
+    categorias = Categoria.objects.all()
     og_description = Header.objects.values_list('og_description', flat=True)
     empresas = Empresa.objects.all()
 
