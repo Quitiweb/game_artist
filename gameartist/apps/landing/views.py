@@ -62,7 +62,7 @@ def enviar_email(subject, message):
 def categoria(request, cat):
     template = loader.get_template('landing/categoria.html')
 
-    categoria = Categoria.objects.filter(nombre=cat).first()
+    categoria = Categoria.objects.filter(id=cat).first()
 
     imagenes = Imagen.objects.filter(categoria=categoria)
 

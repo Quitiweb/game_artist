@@ -6,11 +6,10 @@
             <div class="row">
                 {% for c in categorias %}
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <a class="portfolio-box" href="categoria/{{c.nombre}}">
-                            <img class="img-fluid w-100" src="static/landing/images/thumbnails/{{c.nombre}}.jpg" alt="" />
+                        <a class="portfolio-box" href="{% url 'categoria' c.id %}">
+                            <img class="img-fluid w-100" src="static/landing/images/thumbnails/{{ c.nombre }}.jpg" alt="" />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-100">{{ c.nombre }}</div>
-<!--                                <div class="project-name">Project Name</div>-->
                             </div>
                         </a>
                     </div>
