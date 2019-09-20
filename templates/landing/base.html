@@ -25,7 +25,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="{% static 'landing/css/creative.min.css' %}" rel="stylesheet">
         <noscript><link rel="stylesheet" href="{% static 'main/assets/css/noscript.css' %}" /></noscript>
-        {% block og_description %}{% endblock %}
+
+        {% block description %}<meta property="og:description" content="Arte para videojuegos">{% endblock %}
         <meta name="keywords" content="keywords, html keywords, meta keywords, keyword data, art, malaga, commisions, videogames" />
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.1/masonry.pkgd.min.js"></script>
