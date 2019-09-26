@@ -102,7 +102,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# Kradleco stuff:
+# GameArtist stuff:
 .htaccess
 passenger_*.py
 

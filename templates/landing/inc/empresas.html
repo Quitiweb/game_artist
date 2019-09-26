@@ -1,12 +1,12 @@
 {% load static %}
 
     <!-- Empresa Section -->
-    <section id="portfolio" class="mt-5 text-left">
-        <div class="container-fluid mt-5">
-            <h2>Empresas que han confiado en mi</h2>
+    <section id="portfolio" class="text-center">
+        <div class="container-fluid">
+            <h2 class="mb-4">Empresas que han confiado en mi</h2>
             <div class="row">
                 {% for c in empresas %}
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="col-lg-4 col-sm-6 mb-4 galery">
                         <a class="portfolio-box" href="#">
                             <img class="img-fluid w-100" src="{{ c.imagen.url }}" alt="" />
                             <div class="portfolio-box-caption">

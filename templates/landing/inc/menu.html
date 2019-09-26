@@ -2,11 +2,10 @@
     <div class="inner">
         <h2>Menu</h2>
         <ul class="links">
-            <li><a href="/#">Home</a></li>
-            <li><a href="/#portfolio">Portfolio</a></li>
-            <li><a href="{% url 'blog:index' %}">Blog</a></li>
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#contact">Contact</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+            <li><a href="{% url 'about' %}">Sobre mi</a></li>
+            <li><a href="/about#contact">Contacto</a></li>
         </ul>
         <a href="#" class="close">Close</a>
     </div>

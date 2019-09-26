@@ -19,11 +19,10 @@
         </div>
 
         <nav class="links">
-            <a href="/">Home</a>
-            <a href="/#portfolio">Portfolio</a>
-            <a href="{% url 'blog:index' %}">Blog</a>
-            <a href="/about">Sobre mí</a>
-            <a href="/#contact">Contacto</a>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'portfolio' %}">Portfolio</a>
+            <a href="{% url 'about' %}">Sobre mí</a>
+            <a href="/about#contact">Contacto</a>
         </nav>
 
         <nav class="menu">

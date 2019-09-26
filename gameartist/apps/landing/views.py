@@ -16,28 +16,11 @@ def index(request):
     header = Header.objects.all().first()
     empresas = Empresa.objects.all()
 
-    if request.method == 'GET':
-        form = ContactForm()
-    else:
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = 'Kradleco formulario de contacto'
-            from_email = form.cleaned_data['from_email']
-            message = 'Email recibido de: ' + from_email + '\n\n' + form.cleaned_data['message']
-
-            enviar_email(subject, message)
-
-            form = ContactForm()
-            return redirect('mensaje-enviado')
-        else:
-            print('Error en el formulario')
-
     post_list = Post.objects.filter(
         fecha_de_publicacion__lte=timezone.now()
     ).order_by('-fecha_de_publicacion')[:2]
 
     context = {
-        'form': form,
         'post_list': post_list,
         'categorias': categorias,
         'header': header,
@@ -53,8 +36,8 @@ def mensaje_enviado(request):
 
 def enviar_email(subject, message):
     try:
-        send_mail(subject, message, 'jlramos97@gmail.com', ['jlramos97@gmail.com', 'joseluis@quitiweb.com'])
-        # send_mail(subject, message, 'contact@kradleco.es', ['rafa@quitiweb.com'])
+        # send_mail(subject, message, 'jlramos97@gmail.com', ['jlramos97@gmail.com', 'joseluis@quitiweb.com'])
+        send_mail(subject, message, 'contact@gameartist.es', ['rafa@quitiweb.com'])
     except BadHeaderError:
         return HttpResponse('Invalid header found')
 
@@ -77,8 +60,41 @@ def categoria(request, cat):
 def about(request):
     template = loader.get_template('landing/about.html')
 
-    about = About.objects.filter(activo=True).first()
+    about_info = About.objects.filter(activo=True).first()
 
-    context = {'about': about}
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = 'GameArtist formulario de contacto'
+            from_email = form.cleaned_data['from_email']
+            message = 'Email recibido de: ' + from_email + '\n\n' + form.cleaned_data['message']
+
+            enviar_email(subject, message)
+
+            form = ContactForm()
+            return redirect('mensaje-enviado')
+        else:
+            print('Error en el formulario')
+
+    context = {
+        'about': about_info,
+        'form': form,
+    }
+
+    return HttpResponse(template.render(context, request))
+
+
+def portfolio(request):
+    template = loader.get_template('landing/portfolio.html')
+
+    categorias = Categoria.objects.all()
+    header = Header.objects.all().first()
+
+    context = {
+        'categorias': categorias,
+        'header': header,
+    }
 
     return HttpResponse(template.render(context, request))

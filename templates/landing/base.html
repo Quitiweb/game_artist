@@ -21,9 +21,9 @@
         {% load static %}
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="icon" type="image/gif" href="{% static 'landing/images/logo.png' %}">
+        <link href="{% static 'landing/css/creative.min.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'landing/css/landing.css' %}" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="{% static 'landing/css/creative.min.css' %}" rel="stylesheet">
         <noscript><link rel="stylesheet" href="{% static 'main/assets/css/noscript.css' %}" /></noscript>
 
         {% block description %}<meta property="og:description" content="Arte para videojuegos">{% endblock %}
@@ -63,6 +63,9 @@
             <!-- Main -->
             {% block content %}
             {% endblock %}
+            
+            <!-- Footer -->
+	        {% include "landing/inc/footer.html" %}
 
             <!-- Subir -->
             {% include "landing/inc/subir.html" %}
