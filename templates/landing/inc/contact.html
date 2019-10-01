@@ -1,24 +1,29 @@
 <section id="footer">
     <div class="inner" id="contact">
-        <h2 class="major">¿Tienes alguna duda?</h2>
-        <p>Si necesitas que te resuelva cualquier duda o realizar un encargo, ¡no dudes en contactar conmigo!</p>
-        <div class="contact-form">
-            <form novalidate="novalidate" method="post" name="contact">
-                {% csrf_token %}
-                <div class="fields">
-                    <div class="field">
-                        <label for="email">Dirección de email</label>
-                        {{ form.from_email }}
-                    </div>
-                    <div class="field">
-                        <label for="message">Duda o comentario</label>
-                        {{ form.message }}
-                    </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-lg-7">
+                <h2 class="major">¿Tienes alguna duda?</h2>
+                <p>Si necesitas que te resuelva cualquier duda o realizar un encargo, ¡no dudes en contactar conmigo!</p>
+                <p>Email de contacto: <a href = "mailto: momoyra10@gmail.com">momoyra10@gmail.com</a></p>
+                <div class="contact-form">
+                    <form novalidate="novalidate" method="post" name="contact">
+                        {% csrf_token %}
+                        <div class="fields">
+                            <div class="field">
+                                <label for="email">Dirección de email</label>
+                                {{ form.from_email }}
+                            </div>
+                            <div class="field">
+                                <label for="message">Duda o comentario</label>
+                                {{ form.message }}
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="Contactar" /></li>
+                        </ul>
+                    </form>
                 </div>
-                <ul class="actions">
-                    <li><input type="submit" value="Contactar" /></li>
-                </ul>
-            </form>
+            </div>
         </div>
     </div>
 </section>
