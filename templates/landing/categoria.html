@@ -8,7 +8,7 @@
 <div class="mt-5">
     <br><br><br>
     <div class="row text-center">
-    <h1 class="pt-5 col-12">{{ categoria.nombre }}</h1>
+        <h1 class="pt-5 col-12">{{ categoria.nombre }}</h1>
     </div>
 
     <br><br>
@@ -16,7 +16,7 @@
     {% for i in imagenes %}
         <div class=" justify-content-center col-sm-12 col-md-12 col-12 col-lg-5" data-toggle="modal" data-target="#modal{{i.id}}">
             <img class="w-100" src="/media/{{i.src}}" alt="">
-            <p>{{ i.nombre }}</p>
+            <!-- <p>{{ i.nombre }}</p> -->
         </div>
 
         <!-- Bootstrap Modal -->
