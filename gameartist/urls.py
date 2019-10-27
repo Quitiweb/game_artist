@@ -12,4 +12,5 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('', include('gameartist.apps.accounts.urls')),
     path('', include('django.contrib.auth.urls')),
+    path('cookies/', include('gameartist.apps.cookie_policy.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

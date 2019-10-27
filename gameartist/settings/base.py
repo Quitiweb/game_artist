@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'gameartist.apps.accounts',
     'gameartist.apps.landing',
     'gameartist.apps.blog',
+    'gameartist.apps.cookie_policy',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
+    'cookie_policy.context_processor.cookie_policy',
 )
 
 TEMPLATE_DIRS = (

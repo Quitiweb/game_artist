@@ -60,6 +60,8 @@
                 {% endfor %}
             {% endif %}
 
+            {% if not cookie_accepted %} {% include 'cookie_policy/banner.html' %} {% endif %}
+
             <!-- Main -->
             {% block content %}
             {% endblock %}

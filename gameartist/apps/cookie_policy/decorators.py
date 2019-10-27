@@ -1,7 +1,8 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-from django.http import HttpResponse, HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 
 def cookie_policy(function):
     """
@@ -13,6 +14,6 @@ def cookie_policy(function):
             return function(request, *args, **kwargs)
         else:
             return HttpResponseRedirect(reverse('cookiePolicy'))
-    wrap.__doc__=function.__doc__
-    wrap.__name__=function.__name__
+    wrap.__doc__ = function.__doc__
+    wrap.__name__ = function.__name__
     return wrap
