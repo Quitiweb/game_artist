@@ -28,6 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '.gameartist.es',
+    '.artistadigital.es',
 ]
 
 FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
